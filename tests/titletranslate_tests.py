@@ -20,10 +20,10 @@ class TestTitleTranslate(unittest.TestCase):
         print("")
         try:
             site = pywikibot.Site()
-            page = pywikibot.Page(site, u"Wikimedia_Foundation")
+            page = pywikibot.Page(site, u"20th_century")
         except Exception as error:
             print("fail to load " + page.title)
-        self.assertEqual(pywikibot.titletranslate.translate(page=page), [])
+        self.assertNotEqual(pywikibot.titletranslate.translate(page=page, auto=True), [])
 
 if __name__ == '__main__':
     try:
